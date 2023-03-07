@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>爱你</title>
     <script type="text/javascript">
       document.addEventListener('plusready', function () {
@@ -16,34 +14,26 @@
     <link rel="stylesheet" href="css/love.css" />
     <link rel="stylesheet" href="css/animate.min.css" />
   </head>
-  <audio
-    style="display: none; height: 0"
-    id="bg-music"
-    preload="auto"
-    src="music/love.mp3"
-    loop="loop"
-  ></audio>
+  <audio style="display: none; height: 0" id="bg-music" preload="auto" src="music/love.mp3" loop="loop"></audio>
+
   <body>
-    <div
-      class="container"
-      onselectstart="return false;"
-      unselectable="on"
-      style="-moz-user-select: none"
-    >
+    <div class="container" onselectstart="return false;" unselectable="on" style="-moz-user-select: none">
       <div class="body_left" style="position: absolute; top: 70px">
         <img src="img/biubiubiu.gif" alt="" ondragstart="return false;" />
       </div>
 
-      <div
-        class="body_center love"
-        style="position: absolute; top: 280px; left: 450px"
-      >
+      <div class="body_center love" style="position: absolute; top: 280px; left: 450px">
         <div class="block">
           <div class="div1"></div>
           <div class="div2"></div>
           <div class="div3"></div>
           <div class="div4"></div>
         </div>
+      </div>
+      <!-- <marquee direction="up" scrollamount="2" class="content_text" s>
+      </marquee> -->
+      <div class="loveChen animated" style="display: none">
+        爱你呦~乖宝
       </div>
     </div>
 
@@ -55,7 +45,7 @@
         autoPlayMusic()
         audioAutoPlay()
       })
-      function audioAutoPlay() {
+      function audioAutoPlay () {
         var audio = document.getElementById('bg-music')
         audio.play()
         document.addEventListener(
@@ -67,15 +57,15 @@
         )
       }
       // 音乐播放
-      function autoPlayMusic() {
+      function autoPlayMusic () {
         // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-        function musicInBrowserHandler() {
+        function musicInBrowserHandler () {
           musicPlay(true)
           document.body.removeEventListener('touchstart', musicInBrowserHandler)
         }
         document.body.addEventListener('touchstart', musicInBrowserHandler)
         // 自动播放音乐效果，解决微信自动播放问题
-        function musicInWeixinHandler() {
+        function musicInWeixinHandler () {
           musicPlay(true)
           document.addEventListener(
             'WeixinJSBridgeReady',
@@ -88,7 +78,7 @@
         }
         document.addEventListener('DOMContentLoaded', musicInWeixinHandler)
       }
-      function musicPlay(isPlay) {
+      function musicPlay (isPlay) {
         var media = document.querySelector('#bg-music')
         if (isPlay && media.paused) {
           media.play()
@@ -99,4 +89,5 @@
       }
     </script>
   </body>
+
 </html>
